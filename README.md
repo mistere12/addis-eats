@@ -4,6 +4,11 @@ A simple React food-ordering website.
 
 ## Features
 
+- reusable components
+- props
+- jsx
+- map()
+
 
 ## Built With
 
