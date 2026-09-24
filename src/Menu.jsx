@@ -8,7 +8,7 @@ const menu = [
 
 function Menu(){
   return(
-    <div>
+    <div className="menu">
       {
         menu.map(d=><Dish key={d.id} name={d.name} price={d.price} />) 
       }
