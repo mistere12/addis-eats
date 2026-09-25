@@ -1,10 +1,18 @@
-function Dish ({name,price}){  //destructuring
+import PropTypes from "prop-types";
+
+function Dish ({name,price, currency= "ETB", spicy=false}){  //destructuring
     return(
         <div className ="dish">
-            <h3>{name}</h3>
-            <p>{price} ETB</p>
+            <h3>{name} {spicy && <span>Spicy</span>}</h3>
+            <p>{price} {currency} ETB</p>
         </div>
     );
-}
+};
+
+Dish.PropTypes= {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    spicy: PropTypes.bool,
+};
 
 export default Dish;
