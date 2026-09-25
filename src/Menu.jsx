@@ -1,19 +1,43 @@
-import Dish from "./Dish.jsx"
+import Dish from "./Dish.jsx";
+import menu from "./data.js";
+import Card from "./Card.jsx";
 
-const menu = [
-{ id: 1, name: "Dorowat", price: 500 },
-{ id: 2, name: "Shiro", price: 200 },
-{ id: 3, name: "Tibs", price: 300 },
-];
+
 
 function Menu(){
+
+    const category="Main"; //temporarly 
+
+    const shown = menu.filter(
+        (dish) => dish.category === category
+    );
+
+    if (shown.length === 0) {
+    return (
+      <section>
+        <h2>Our Menu</h2>
+        <p>No {category} dishes.</p>
+      </section>
+    );
+    }
+
+
   return(
-    <div className="menu">
-      {
-        menu.map(d=><Dish key={d.id} name={d.name} price={d.price} />) 
-      }
-    </div>
-  )
+    <section>
+    <h2>Our Menu</h2>
+
+    { shown.map (
+        (dish) => (
+            <Card key={dish.id}>
+                <Dish name={dish.name}
+                price={dish.price}
+                spicy={dish.spicy}
+                />
+            </Card>
+        ) // made into array of components 
+    )} 
+    </section>
+  );
 }
 
 export default Menu;
