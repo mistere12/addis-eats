@@ -4,7 +4,7 @@ function Dish ({name,price, currency= "ETB", spicy=false}){  //destructuring
     return(
         <div className ="dish">
             <h3>{name} {spicy && <span>Spicy</span>}</h3>
-            <p>{price} {currency} ETB</p>
+            <p>{price} {currency} </p>
         </div>
     );
 };
