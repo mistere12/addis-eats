@@ -8,6 +8,11 @@ A simple React food-ordering website.
 - props
 - jsx
 - map()
+- PropTypes
+- Conditional rendering
+- children prop
+- Filtered menu
+- 
 
 
 ## Built With
